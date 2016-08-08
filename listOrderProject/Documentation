@@ -1,0 +1,41 @@
+Host: 
+------------------------------------------------------------------------------
+http://smarttestdb.cal.ci.spirentcom.com
+http://smtdb-test.cal.ci.spirentcom.com/stadmin/
+
+------------------------------------------------------------------------------
+Job:
+
+1. in the filter on the right called modules script needs to run on
+2. make it alphabetical 
+
+edited
+------------------------------------------------------------------------------
+stapp/admin.py
+------------------------------------------------------------------------------
+Easy to Debug in Django: 
+------------------------------------------------------------------------------
+raise Http404('Error occured when exporting csv file')
+
+
+list_filter in stapp/admin.py
+
+python django working with the database: 
+-------------------------------------------------------
+tableName.objects()           				returns a list of row objects of the table. 
+tableName.objects.all().order_by('name')    where name is a column name in the tableName table. 
+tableName.objects.get(do some sql get stuff here) ........ex. 
+tableName.objects.get(do some sql get stuff here) ........ex. 
+objects.get().columnName to get a column value 
+for database you create a class for the database name in the models.py file
+testsets__id__exact
+
+example: 
+class TestCase_Base(models.Model):
+
+In this case there is a table named testcase, in the clas you define the queryset.filter(VALUE HERE__in=[testset])
+return queryset.filter(testsets__in=[testset])
+
+
+version table has a column field where it has all the test case data. you can look at this to see what has been changed. 
+revision revision has the comment text on what was changed. 

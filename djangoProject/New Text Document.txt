@@ -1,0 +1,4 @@
+1. http://smtdb-test.cal.ci.spirentcom.com/tracker/getTest&var=20CC9986
+2. in the views.py, want to get the database row with value checksum
+3. then alter the database or return false as in it was an invalid checksum value. 
+4. on the html side want to do a get request and get the data then alert invalid if false and refresh the page if otherwise. 

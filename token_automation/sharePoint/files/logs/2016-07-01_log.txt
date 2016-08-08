@@ -1,0 +1,115 @@
+----------------------------------------------------------------------------------------------------
+2016-07-01 10:29:00 Ran setP4Permissions.py update
+
+Processing new token request(1 of 5):
+     User: ainiguez
+     Reason: testing to add aaron 
+     Branch:4.66_rel
+     Status: 3-Complete
+     Modified: 2016-06-30T14:26:22
+     Created: 2016-06-30T13:42:18
+Updating Perforce: removing ainiguez from branch: 4.66_rel
+User is not a member of the branch: no action needed
+
+Processing new token request(2 of 5):
+     User: agoulak
+     Reason: TEST AGAIN
+     Branch:4.66_rel
+     Status: 1-Approved
+     Modified: 2016-06-30T14:26:07
+     Created: 2016-06-30T14:22:47
+Updating Perforce: adding agoulak to branch: 4.66_rel
+User already a member of the branch: no action needed
+Sending Email: ['agoulak'] granted access to 4.66_rel, 
+
+Processing new token request(3 of 5):
+     User: mpandey
+     Reason: TEST
+     Branch:4.66_rel
+     Status: 3-Complete
+     Modified: 2016-06-30T14:22:00
+     Created: 2016-06-30T12:44:25
+Updating Perforce: removing mpandey from branch: 4.66_rel
+User is not a member of the branch: no action needed
+
+Processing new token request(4 of 5):
+     User: ainiguez
+     Reason: rmeove aaron
+     Branch:4.66_rel
+     Status: 3-Complete
+     Modified: 2016-06-30T14:12:08
+     Created: 2016-06-30T14:12:08
+Updating Perforce: removing ainiguez from branch: 4.66_rel
+User is not a member of the branch: no action needed
+
+Processing new token request(5 of 5):
+     User: ainiguez
+     Reason: test 3 complete
+     Branch:4.66_rel
+     Status: 3-Complete
+     Modified: 2016-06-30T13:59:20
+     Created: 2016-06-30T13:59:20
+Updating Perforce: removing ainiguez from branch: 4.66_rel
+User is not a member of the branch: no action needed
+----------------------------------------------------------------------------------------------------
+2016-07-01 11:19:30 Ran setP4Permissions.py update
+
+Processing new token request(1 of 5):
+     User: ainiguez
+     Reason: testing to add aaron 
+     Branch:4.66_rel
+     Status: 3-Complete
+     Modified: 2016-06-30T14:26:22
+     Created: 2016-06-30T13:42:18
+Updating Perforce: removing ainiguez from branch: 4.66_rel
+User is not a member of the branch: no action needed
+
+Processing new token request(2 of 5):
+     User: agoulak
+     Reason: TEST AGAIN
+     Branch:4.66_rel
+     Status: 1-Approved
+     Modified: 2016-06-30T14:26:07
+     Created: 2016-06-30T14:22:47
+Updating Perforce: adding agoulak to branch: 4.66_rel
+User already a member of the branch: no action needed
+Sending Email: ['agoulak'] granted access to 4.66_rel, 
+
+Processing new token request(3 of 5):
+     User: mpandey
+     Reason: TEST
+     Branch:4.66_rel
+     Status: 3-Complete
+     Modified: 2016-06-30T14:22:00
+     Created: 2016-06-30T12:44:25
+Updating Perforce: removing mpandey from branch: 4.66_rel
+User is not a member of the branch: no action needed
+
+Processing new token request(4 of 5):
+     User: ainiguez
+     Reason: rmeove aaron
+     Branch:4.66_rel
+     Status: 3-Complete
+     Modified: 2016-06-30T14:12:08
+     Created: 2016-06-30T14:12:08
+Updating Perforce: removing ainiguez from branch: 4.66_rel
+User is not a member of the branch: no action needed
+
+Processing new token request(5 of 5):
+     User: ainiguez
+     Reason: test 3 complete
+     Branch:4.66_rel
+     Status: 3-Complete
+     Modified: 2016-06-30T13:59:20
+     Created: 2016-06-30T13:59:20
+Updating Perforce: removing ainiguez from branch: 4.66_rel
+User is not a member of the branch: no action needed
+----------------------------------------------------------------------------------------------------
+2016-07-01 11:19:58 Ran setP4Permissions.py update
+----------------------------------------------------------------------------------------------------
+2016-07-01 11:22:05 Ran setP4Permissions.py update
+No new token requests found
+----------------------------------------------------------------------------------------------------
+2016-07-01 11:22:50 Ran setP4Permissions.py update
+
+No new token requests found

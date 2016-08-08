@@ -1,0 +1,8 @@
+DJango Notes
+
+In a template(in the templates folder)
+
+	1. {{ person_name }}) is a variable.
+	2. Any text that’s surrounded by curly braces and percent signs (e.g., {% if ordered_warranty %}) is a template tag(block tag)
+	3. {% block title %}
+	4. {% extends "base.html" %}

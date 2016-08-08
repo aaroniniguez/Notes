@@ -1,0 +1,26 @@
+DIMM or dual in-line memory module
+each DIMM has memory type, memory chip’s speed, and number of connectors, or pins.
+ex. DRAM, 1333 Mhz, ... etc
+	DDR3, 1333 Mhz, ... etc
+does the computer have a pairing requirement?
+
+1. Suppose a server has 6 ports for harddrives. 
+you put 6 harddrives in,  the computer wont see it, it first checks with a hardware controller which is in charge of those details. 
+2. make a raid of 5 harddrives and leave one out for a backup in case 1 hard drive fails. 
+3. the operating system is very small and so you should only put it in one hard drive (if you mixed them ie put vm on the same harddrive as the os, if the vm part fails the entire harddrive fails so the os will be lost, thats why you should separate them. )
+raids: 
+RAID (redundant array of independent disks)
+Raid 0: splits the data across the hard drive disks, if one hard drive fails they all fail(data is gone forever) so this setup is used for performance. 
+RAID 0: Blocks striped, no mirror, no parity. (no redundancy)
+
+to enter controller config do 
+f-2 then ctrl-c
+
+1. remove the current raid volume setup, 
+2. creat a new raid volument setup
+3. attach image
+4. install esix on the image. (restart from new raid volume setup and then do f11 on reboot keep attach image window open)
+
+
+https://www.youtube.com/watch?v=eE7Bfw9lFfs
+https://10.180.28.86/     is where the esix is now

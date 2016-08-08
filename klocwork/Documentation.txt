@@ -1,0 +1,35 @@
+Host:
+-------------------------------------
+http://spccalengcov01:8090/review/insight-review.html#projects
+
+username: spirent
+password: 
+-------------------------------------
+
+http://spccalengcov01:8090/
+http://spccalengcov01:8090/review/api
+
+You can ping the klocwork server at 
+ping spccalengcov01.spirentcom.com
+what is ltoken
+
+------------------------------------------------------------------------------
+Job:
+
+get the list of issues located at: 
+http://klocwork.cal.ci.spirentcom.com:8090/review/insight-review.html#issuelist_goto:project=integration_Win_BLL_baseline,searchquery=status%253A%252BAnalyze%252C%252BFix,sortcolumn=id,sortdirection=ASC,view_id=1
+and put them in a file to be analyzed
+
+for each project go to builds and get all the issue info from these builds. 
+
+curl --data "action=search&user=spirent&project=integration_Win_BLL_baseline&query=status:+Analyze,+Fix" http://spccalengcov01.spirentcom.com:8090/review/api
+
+Example klocwork API usage: 
+curl --data "action=search&user=spirent&project=integration_Win_BLL_baseline&query=status:Analyze" http://spccalengcov01.spirentcom.com:8090/review/api
+
+
+Get all the views. 
+curl --data "action=views&user=spirent&project=integration_Win_BLL_baseline" http://spccalengcov01.spirentcom.com:8090/review/api
+
+Get issues for a specific view
+curl --data "action=search&user=spirent&project=integration_Win_BLL_baseline&query=status:Analyze&view=PGH - SubscriberRoaming" http://spccalengcov01.spirentcom.com:8090/review/api

@@ -1,0 +1,97 @@
+
+1. The above link is a site where a new item is updates by an employee. 
+2. the manager then links at the link and then says whether or not he wants to approve the change. 
+3. we use jenkins to see the change and then update the perforce settings accordingly. 
+
+perforce environment variables are set in jenkins configure section P4PASSWD, P4PORT, P4USER, SPUSER, SPPASSWD
+
+in jenkins the following main file is run:
+setP4Permissions.py
+	sets branches variable to contents of branches.txt
+	runs spList.buildDictfromSP() ----returns dic mapping of new token ids to new token instances
+	updateP4()
+	resolveBranch()
+		returns none (if the branch tokenBranchValue  in lastupdate does not match any of the new branch timestamps 	)
+
+python files/setP4Permissions.py $operation $Id $branch
+
+  9     def __init__(self, name, password, URL='http://enginfo.spirentcom.com/engineering', domain='SPIRENTCOM', listName = None):
+
+SPT class(in SPTokenList.py)
+  the above is the stp class which logs in to the sharepoint site(WHICH IS NOW DIFFERENT) and returns any updated tokens
+  the class provides certain functions: 
+  getList() which gets the list from the sharepoint site
+  buildDicFromSP() which gets any token request updates.  
+  processList() which is the function that directly gets the updates from the sharepoint, 
+  the class also saves the updated token request dic 
+
+
+branch table:
+	-id
+	-reqtime
+	-manapprovaltime
+	-completiontime
+
+
+TokenDB class
+	__init__ connects to the database. 
+	giveManagerApproval()
+		-the the manapprovaltime in the the specified branch table 
+	tableExists()
+		-check if table exists, if not end all operations
+	getEmails()
+		returns emails or some thing
+	tokenExists()
+		-returns the row if token is found in the token table
+		if token id not found in the token table rollback all changes. 
+	processToken
+	setAuth()
+		-checks if a specific branch column exists in the tokenauth table, if not it creates the column
+		-then it checks if user exists in the username col in token auth table if not it adds them
+		-then it finally ....
+	setPermission()
+		given a user and an operation it checks perforce via the command line to see if a user is in a branch + do operation 
+		stuff
+
+1. looks like we need to create the database again.
+2. change the emails. 
+3. change the interface from interacting with enginfo.spirentcom/engineering to interacting with the sharepoint
+
+
+	
+---------------------------------------------------------------
+
+for the new site
+http://srs.spirent.com/STCRelPlan/
+username: aaron.iniguez@spirent.com
+password: Spirent123
+http://jenkins-devops.cal.ci.spirentcom.com:8080/job/token_automation
+https://spirent1.sharepoint.com/sites/cip/stcrelplan/Lists/Perforce%20Mainline%20Token/AllItems.aspx
+	
+export P4USER=p4admin
+export P4PORT=perforce.spirentcom.com:1666
+export SPUSER=aaron.iniguez@spirent.com
+export SPPASSWD=Spirent123
+export P4PASSWD=SpirentSCM
+
+
+for the old site(http://enginfo.spirentcom.com/)
+http://enginfo.spirentcom.com/engineering/_vti_bin/ListData.svc/PerforceRequestForIntegrationToken?$select=Branch,Users,Reason,StatusValue,Id,Modified&$orderby=Modified desc&$top=250&$expand=Branch
+
+export P4USER=p4admin
+export P4PORT=perforce.spirentcom.com:1666
+export SPUSER=qabuild
+export SPPASSWD=Spirent8
+export P4PASSWD=SpirentSCM
+
+
+
+todo:::::::::::work on updateP4 function.....resolveNames()..................can have more than 1 name? what is the format
+
+ p4 group -a -o stc_4.67_rel_write
+
+edited SPtokenlist.py
+edited setPermissions.py
+
+set to run 
+* * * * *

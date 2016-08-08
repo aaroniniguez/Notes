@@ -1,0 +1,5 @@
+1. To connect to the server you need the hostname and the ppk file for auth
+2. The Bash Script runjob.sh runs the python file which runs the http server
+run:
+	nohup bash runjob.sh &
+To continuously run the server forever

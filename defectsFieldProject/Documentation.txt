@@ -1,0 +1,53 @@
+Host: 
+------------------------------------------------------------------------------
+http://smarttestdb.cal.ci.spirentcom.com/stadmin/stapp/testcase/29164/
+http://smtdb-test.cal.ci.spirentcom.com/stadmin/
+
+------------------------------------------------------------------------------
+Job:
+
+1. add a new defects text field with string max 2000 characters
+2. export to csv , export to xlsm 
+3. state can be changed from Active to “Failing with CR” automatically in this case. It will be nice-to-
+
+Import live database to test database:
+------------------------------------------------------------------------------
+the sql backups are located here: 
+\\storage.cal.ci.spirentcom.com\general\smarttest_db
+
+1. select the database from the gui. 
+2. select public, delete it and create a new one. 
+3. select public and then open the pgconsole and run /i filename.sql to insert all the data into the database. 
+------------------------------------------------------------------------------
+
+edited
+------------------------------------------------------------------------------
+edit database itself to add column 
+stapp/readcsv_server.py
+stapp/admin.py
+stapp/models.py
+templates/admin/adv_filter.html
+stapp/testcaseutil.py
+------------------------------------------------------------------------------
+Easy to Debug in Django: 
+------------------------------------------------------------------------------
+raise Http404('Error occured when exporting csv file')^
+
+qs.filter(defects__icontains=match_content)^
+modelObject._meta.get_all_field_names()
+
+if you import go from 
+active --> new
+
+if you edit from the website
+active --> active
+basically they don't change
+
+URGENT
+remember to merge the file....
+
+isAdd = False
+is changed...
+ismassedit = false
+
+opts.module_name()

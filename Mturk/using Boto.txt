@@ -1,0 +1,11 @@
+http://www.saltycrane.com/blog/2010/03/how-list-attributes-ec2-instance-python-and-boto/
+
+setting up server for boto
+sudo apt-get update
+sudo apt-get install python-pip
+pip install boto
+sudo apt-get install git
+cd ~
+git clone https://github.com/aaroniniguez/vimrc.git
+mv vimrc/.vimrc .
+mv vimrc/.bash_aliases .

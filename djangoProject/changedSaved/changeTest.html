@@ -1,0 +1,5 @@
+{% for name, queue in queues %}
+	{% for ticket in queue %}
+              <td class = resultsLink>{{ ticket.id }}</td>
+           {% endfor %}
+        {% endfor %}

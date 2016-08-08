@@ -1,0 +1,19 @@
+added cancel test functionality at:
+
+http://smarttestdb.cal.ci.spirentcom.com/tracker/piv_queue_hw
+
+smart testing server
+http://smtdb-test.cal.ci.spirentcom.com/tracker/piv_queue_hw
+
+Command to restart apache
+
+/etc/init.d/apache2 restart
+
+python, django, javascript
+
+Smart test front end source code
+//SmartTest-GUI/mainline/stsite/
+Test host: SMTDB-test.cal.ci.spirentcom.com (root/spirent)
+Files location
+/home/SmartTest/WebINF/stsite/tracker
+

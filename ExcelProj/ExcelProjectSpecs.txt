@@ -1,0 +1,12 @@
+1. remove the job names with words: 
+	a. -Results
+	b. -upgrade
+	c. -Maintenance
+	d. -Restart
+	e. .html
+	f. .xml
+	g. .txt
+3. for the jobs not ran within the last month 
+	a. mark for delete. 
+4. for the rest of the jobs get the jobname, the suitemaster name and agents. 
+	b. for some of the jobs there is a resource txt file in /ws/ folder of that job, there are agent hostnames in that file get them also

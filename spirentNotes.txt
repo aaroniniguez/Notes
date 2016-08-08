@@ -1,0 +1,308 @@
+\\storage.cal.ci.spirentcom.com
+network ^
+2. 1u, 2u, etc
+3. pod
+4. on the server there are many depots(which contain files), you use perforce on the client computer to 
+get a local copy of the depot(called your workspace)(you never work directly on the files in the depot)
+5. the workspace name: ainiguez_CAL-1PXBVR1_1502 is an alias for the workspace root: C:\Users\ainiguez\Perforce\ainiguez_CAL-1PXBVR1_1502
+then the mappings map a depot to a location on the local drive eg: //xTAPI/... //ainiguez_CAL-1PXBVR1_1502/xTAPI/...
+so there is a viewing of the //XTAPI depot at C:\Users\ainiguez\Perforce\ainiguez_CAL-1PXBVR1_1502/xTAPI/...
+6. paths above are separated by foward slashes. 
+7. from the viewable depots(the depots you are allowed to see, from the mappings), you can use the --get operation--, which gets the file
+from the depot to your local machine.
+8. files gotten used with get are read only.
+9. repositories are another name for depots. 
+10. you edit files by doing "check out"(which then creates a changelist) then you can just open the file and edit it, then after you save, 
+you submit the changelist, which changes the file in the depot(repository)
+11. you can add a file from windows, then you can do add and then submit changelist(with description)
+12. you can see all the pending changelists by going to view->pending changelists(in the case of deleting a file you can see it was deleted
+in the changelist and then you can view the pending changelist and submit the delete action)(faster way to delete and submit?)
+13. so in summary you can: 
+	a. check out(aka edit)
+	b. mark for add
+	c. mark for delte
+	d. get(have to do this first)
+	e. submit
+15. jenkins is a software that allows you to do continous integration
+16. continuous integration is the practice of merging all developer working copies to a shared mainline several times a day. 
+17. why is continuous integration useful? it is used to prevent issues from occurring later in the build. 
+18. the link given: http://jenkins-devops.cal.ci.spirentcom.com:8080/view/DevOps/ has jenkins running on a server at that port
+19. going to automate a perforce request for integration token is approved or rescinded using jenkins
+20. pv4 is name of the gui for perforce
+21. I guess learn branching in perforce https://www.perforce.com/perforce/doc.current/manuals/p4guide/chapter.codelines.html
+22. go to jenkins-->tools-->token automation-->WORKSPACE to look at the code of the jenkins tools
+24. updated vimrc
+25. TODO check the syntax of the vimrc
+26. sys.argv[0] is the name of the script
+27. global variables in python written as ex: 
+global path
+then you can use path...
+28. jenkins runs on some server, then it runs python projects on different servers. 
+29. you can set a chron table for jenkins, can set what you shell script you want to execute(to start your python project): all of this is located in the configure section. 
+30. there are static and non-static methods in python classes. you make a function static in python like this: 
+    @staticmethod
+    def mix_ingredients(x, y):
+        return x + y
+the difference is
+31. the method no longer requires a self argument(that references the object) as it would if it were a non-satic method. so for functions that don't use the objec, you make them static. 
+32. python doesn't have to create a bound-method which are costlier
+33. the pickle module is a way to save dictionaries/tuples/functions/classes/booleans/inegers/complex numbers/strings etcccc. 
+similar to how a game saves your data to be used later. 
+34. in python working with files 
+file = open("filename", "w") --- opens the file
+file.seek() ---  then you can move the files current position to the beginnging with file.seek(0) and then write with: 
+file.write() --- writes to the file
+file.read --- can read the file file.read(1) reads 1 character or 1 byte, file.read() reads the entire files
+file.close() --- have to close the file when you are done with it
+35. The first argument of every class method, including __init__, is always a reference to the current instance of the class. By convention, this argument is always named self, eg: 
+def getList(self, arg a, arg b)
+36. can debug with 
+===============
+write your python code
+quit()
+=====================
+---------------------------------------------------------------------------------------------------------------
+get type of variable --- type(variable name)
+create an environmental variable to move around more quicly eg:
+export a1=/home/jenkins/workspace/token_automation/files/
+delete till end of file in vim: dG
+In computer programming, create, read, update and delete[1] (as an acronym CRUD
+0 takes you to beginning of the line
+python string.split("word") returns a list and does not affect the original string
+there are different forms of authentication, you can inspect which one a site uses using chrome developer tools(from authentication headers?)
+---------------------------------------------------------------------------------------------------------------
+use winscp to do file transfers not putty
+
+
+
+---------------------------------------------------------------------------------------------------------------
+
+copy the folder and its contents files into the sharepoint folder
+cp -r files/ sharePoint/
+
+sorted(student, key = lambda student: student["name"])
+sorted(student, key = lambda student: student["name"], reverse= True)
+
+sorted(mytuple, key = lambda tup:tup[1])
+
+mytuple is a tuple that looks like: 
+mytuple = ((1,"hello"),(2,"bye"),(3,"AC"))
+
+the individual items in the tuple are passed to the right part of the sorted function and set as tup(or whatever name you want), 
+then the lambda function return tup ordered by tup[1]
+so sorted returns the list or tuple ordered
+
+
+>>> def f (x): return x**2
+... 
+>>> print f(8)
+64
+>>> 
+>>> g = lambda x: x**2
+>>> 
+>>> print g(8)
+64
+
+
+sortedList = sorted(requestList,key = self.doSome,reverse = True )
+
+each element of requestList is given to the function doSome() before the elements are sorted
+-------------------------------------------------------------------
+
+json file:
+
+
+dictionary with unicode values: 
+{u'some_list': [1, 2, 3], u'some_text': u'my text', u'some_number': 12345, u'null_value': None}
+is a python object.
+
+To convert to a json string: 
+'{"some_list": [1, 2, 3], "some_text": "my text", "some_number": 12345, "null_value": null}'
+
+use json module:
+import json
+jsonString = json.dumps(python object)
+
+sort processes from left to right!
+
+2014/23/34 etc
+
+to convert from unicode string to string do
+str(unicode string)
+
+
+postgreSQL
+
+select 1 from contact where id=12
+this selects 1 row or none from contact table where id = 12 
+
+select exists(select 1 from contact where id =12)
+this returns true or false if the row where id = 12 exists
+
+product_no integer REFERENCES products (product_no),
+Now it is impossible to create orders with product_no entries that do not appear in the products table.
+
+We say that in this situation the orders table is the referencing table and the products table is the referenced table. Similarly, there are referencing and referenced columns.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+each new session in putty has different environment variables that can be set. 
+isoformat time is a string so %s in postgresql
+
+truncate table to delete the table contents
+
+to get good error notes in python do
+import traceback
+try: 
+except Exception as e:
+	traceback.print_exc();
+
+in postgres you use ' ' not ""
+
+
+you can add lists in python!
+
+mylist1 = [1]
+mylist2 = [2]
+mylist1+mylist2
+[1,2]
+--------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
+
+JENKINS
+		1. enabling job in jenkins means you can run the python files in it now!
+		2. build environment inject passwords to the build as environment variables
+		and doing export in the execute shell area are the same thing in jenkins!
+----------------------------------------------
+PYHTHON
+	myword = "hello, there"
+	import re
+	re.split(",", myword)
+['hello', ' there']
+	myword = "hello there"
+	re.split(",", myword)
+['hello there']
+
+4. string.strip() trims white space on both sides
+5. to append a list to another list do list.extend(list)
+6. instead of concatenating a list and string and then printing which you cannot do, do this:
+
+print "names list: ", nameslist
+
+7. python uses and instead of && in it's conditional
+
+----------------------------------------------
+EFFICIENCY
+	3. clear && printf '\033[3J'
+	to clear terminal and scrollback for easy debugging in putty
+	create an alias so that when you run a function in linux it does somethign else. 
+	alias clear="clear && printf '\033[3J'"
+
+http://jenkins-devops.cal.ci.spirentcom.com:8080/job/token_automation/buildWithParameters?token=tok&operation=addRestricted&branch=4.66_rel&created=2016-06-23T07:48:46
+
+DATABASE:
+when putting timestamps in the postgresql database(doing isoformat() before inserting) be sure to when taking them out do isoformat()
+
+ stc_4.66_rel_write
+
+ Here is how you can remove a user from a group in perforce
+ p4 -u p4admin -P SpirentSCM group stc_4.66_rel_write
+
+ this will open up vi which you can then edit and save!
+
+--------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
+
+p4 sync
+	Synopsis
+	Copy files from the depot into the workspace.
+
+--------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
+
+//to download the repository
+git clone your_repo_name
+//if you edit a file in the repo(which is now in your workspace)
+git commit -am "your message"
+//then push
+git push
+//to delete a file:
+git rm file_name
+//then commit the deletion and push
+
+alias ls="ls -l --color=auto"
+
+
+//get ip
+curl ifconfig.me
+
+each group has 3 permission rwx
+chmod u=rwx,g=rx,o=rx filename
+
+1. when debugging, write the filename youre in and going to and were in before etc. 
+2. set the permissions exactly the same using chmod
+3. use grep -r "" *
+
+python search and get item from string
+print [s for s in list if sub in s]
+
+
+to pipe into a file do 
+
+command > myfile.txt
+--------------------------------------------------------
+How to solve a problem quickly. Write each step and what the next step is. log all things changed. 
+
+--------------------------------------------------------
+
+
+python exception handling: 
+
+try: 
+	do something
+except: 
+	catch all the errors
+
+	In vim to move to end of line and edit do A instead of $
+
+
+in python: 
+
+tuples use parentesis () instead of [] like lists
+
+
+
+
+the class dog is a subclass of animal(aka "dog is an animal") and inherits the properies of animal
+class Animal(object):
+  speakStr = 'Hello from Animal'
+  pass
+class Dog(Animal):
+  pass
+
+bark = Dog.speakStr
+print(bark)
+
+
+guest operating system (guest OS) is an operating system (OS) that is secondary to the OS originally installed on a computer, which is known as the host operating system. 
+
+--------------------------------------------------------------
+on freebsd: 
+
+setenv  PACKAGEROOT 'http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/i386/7.1-RELEASE/7.1-RELEASE/packages/All/'
+then you can use pkg_add
+
+pkg_add -r filename(without the .tbz extension)
+
+community:
+https://communities.vmware.com/message/984649#984649
+
+vmware packages:
+https://packages.vmware.com/tools/esx/6.0/ubuntu/dists/lucid/index.html
+
+search : 
+http://www.vmware.com/resources/compatibility/search.php?action=search&deviceCategory=software&advancedORbasic=advanced&maxDisplayRows=50&key=&productId=3&datePosted=-1&partnerId%5B%5D=-1&os_bits=-1&os_use%5B%5D=-1&os_family%5B%5D=-1&os_name%5B%5D=FreeBSD&os_type%5B%5D=-1&rorre=0

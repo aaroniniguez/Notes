@@ -1,0 +1,16 @@
+
+Before running the python file, run the following commands: 
+--------------------------------------------------------------------
+pip insall openpyxl
+pip install --upgrade --force-reinstall openpyxl
+
+
+
+How to use:
+--------------------------------------------------------------------
+First download all csv files and place them in the same directory as the python file: updateWorkbook.py
+Then Run:
+
+python updateWorkbook.py YourWorkBookName.xlsm
+
+Where YourWorkBookName should be the xlsm file name. After the python file is finished the workbook should be updated with the new values. 

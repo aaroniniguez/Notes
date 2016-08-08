@@ -1,0 +1,22 @@
+Connection/WorkSpace:
+----------------------------------------------------------------------------------------------------------------------------
+
+http://smarttestdb.cal.ci.spirentcom.com/stapp/regression_goal/
+
+Changed Files
+----------------------------------------------------------------------------------------------------------------------------
+templates/stapp/regression.goal.html
+stsite/stapp/views.py
+stsite/stapp/models.py
+stsite/stapp/front_end.html
+TASK:
+----------------------------------------------------------------------------------------------------------------------------
+1. add 3 decimal places to success rate number
+2. add new virtual row 
+edited regression_goal.html
+
+Learned:
+----------------------------------------------------------------------------------------------------------------------------
+
+the function using means you use the database testresult
+TestSuite.objects.using('result')

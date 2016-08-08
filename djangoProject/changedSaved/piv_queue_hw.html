@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-us" >
+<head>
+<title>Pre-Integration HW Test Queue</title>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/css/changelists.css" />
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/static/admin/css/ie.css" /><![endif]-->
+<script type="text/javascript">window.__admin_media_prefix__ = "/static/admin/";</script>
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.js"></script>
+<script type="text/javascript" src="/static/js/calendar.js"></script>
+<script src="http://smarttestdb.cal.ci.spirentcom.com/static/js/piv_menu.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/cancelTest.js"></script>
+<meta name="robots" content="NONE,NOARCHIVE" />
+<style>
+	tr:hover td.resultsLink{
+		background:#0688fa;
+		color:white;
+	}
+	tr:hover td.pointers{
+		cursor:pointer;
+	}
+</style>
+</head>
+
+<body class="change-list" onload="initForms('{{ filter_ini }}');">
+
+<!-- Container -->
+<div id="container">
+
+    
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+        
+<h1 id="site-name">Pre-Integration HW Test Queue</h1>
+
+        </div>
+        
+        
+        
+    </div>
+    <!-- END Header -->
+    
+    <!-- Content -->
+    <div id="content" class="flex">
+        
+        
+      <h1><center>PIV HW Test Queue</center></h1>
+      {% for name, queue in queues %}
+      <table id={{ name }} style="width:{% widthratio 1 queues|length 100 %}%; float:left; padding-left:20px;">
+          <caption><h3>{{ name }}</h3></caption>
+          <thead>
+            <tr>
+              <th>ID</th>            
+              <th>CL</th>
+              <th>Build</th>
+              <th>Status</th>
+              <th>User</th>
+              <th>TestSets</th>
+              <th>Priority</th>
+              <th>Scheduled</th>
+              <th>Last Update</th>
+              <th> Pass % </th>
+              <th> Cancel Test </th>
+            </tr>
+          </thead>
+          <tbody>
+          
+            {% for ticket in queue %}
+  	<tr>
+              <td class = resultsLink>{{ ticket.id }} </td>
+              <td class = resultsLink>{{ ticket.shelved_changelist }}</td>
+              <td class = resultsLink>{{ ticket.bll }}</td>
+                  {% if ticket.get_state_display == 'Pending' %}
+                  <td style="background-color:white;">
+                  {% elif ticket.get_state_display == 'In Progress' %}
+                  <td style="background-color:orange;">
+                  {% elif ticket.get_state_display == 'Complete' %}
+                  <td style="background-color:lime;">
+                  {% else %}
+                  <td>
+                  {% endif %}
+              {{ ticket.get_state_display }}</td>
+              <td class = resultsLink>{{ ticket.recipient_email_no_ext }}</td>
+              <td class = resultsLink>{{ ticket.testsets }}</td>
+              <td class = resultsLink>{{ ticket.priority }}</td>
+              <td class = resultsLink>{{ ticket.added_time }} </td>
+              <td class = resultsLink >{{ ticket.updated_time }}</td>
+              
+              
+                 {% if ticket.pass_rate == None %}
+              <td bgcolor={{ ticket.pass_color }}  class = "resultsLink pointers"  onclick="alert( 'No results available yet')">
+             {% else %} 
+              <td bgcolor={{ ticket.pass_color }}  class = "resultsLink pointers" onclick="window.open( 'http://smarttestdb.cal.ci.spirentcom.com/stapp/suite_result/?suite={{ ticket.test_suite_id }}')">
+           {% endif %}   
+           {{ ticket.pass_rate }}</td>
+              {% if ticket.get_state_display == 'Pending' %}
+              <td style="text-align:center" class = "resultsLink pointers"
+	      onclick="cancelTest({{ ticket.id }});"
+	      >X</td>
+	      {% else %}
+	      <td></td>
+              {% endif %}
+  	</tr>
+           {% endfor %}
+  				
+          </tbody>
+        </table>  
+        {% endfor %}
+			</div>
+    </div>
+    <!-- END Content -->
+
+<!-- END Container -->
+
+</body>
+</html>
