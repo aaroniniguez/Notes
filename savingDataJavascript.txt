@@ -1,0 +1,51 @@
+gm_Get and save tab....
+
+save data in tab, it persists in one script running in a tab across all sites that specific tab goes to and across different tabs running that same script.  
+does not persist across different scripts
+GM persists across tabs and domains....
+
+sessionstorage persists across scripts and vars persist in tab. 
+sessionstorage is not possible between tabs!
+each tab a new session is created
+
+According to the Webstorage Specification, "When a new Document is created in a browsing context which has a top-level browsing context, the user agent must check to see if that top-level browsing context has a session storage area for that document's origin. If it does, then that is the Document's assigned session storage area."
+
+
+sessionStorage.setItem('key', 'value');
+
+// Get saved data from sessionStorage
+var data = sessionStorage.getItem('key');
+
+// Remove saved data from sessionStorage
+sessionStorage.removeItem('key')
+
+
+
+
+
+
+
+myStorage = localStorage;
+localStorage.setItem('myCat', 'Tom');
+
+function onStorageEvent(storageEvent){
+
+    alert("storage event");
+}
+
+window.addEventListener('storage', onStorageEvent, false);
+
+
+required info: 
+has to have it 
+
+olga: 
+put not relevant instead of no contact
+
+certificate, use windows machine to export the ssl certificate and then import on both the windows machine and the chrome os machine.
+use filezilla to send file to aws ---> do chmod 777 on directory to send file over. 
+
+to run job in background without putty in terminal use screen -dR and then 
+CTRL-A, d to disconnect your screen then CTRL-D to disconnect from the server
+Go on vacation for three weeks
+
