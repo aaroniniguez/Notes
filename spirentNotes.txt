@@ -288,21 +288,13 @@ bark = Dog.speakStr
 print(bark)
 
 
-guest operating system (guest OS) is an operating system (OS) that is secondary to the OS originally installed on a computer, which is known as the host operating system. 
+--------------------------------------------------------
 
---------------------------------------------------------------
-on freebsd: 
+to upload a file to your amazon ec2 log in as ubuntu and then change the ownership of the folder you want to upload into ex: 
+chown -R ubuntu /var/www/html
 
-setenv  PACKAGEROOT 'http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/i386/7.1-RELEASE/7.1-RELEASE/packages/All/'
-then you can use pkg_add
-
-pkg_add -r filename(without the .tbz extension)
-
-community:
-https://communities.vmware.com/message/984649#984649
-
-vmware packages:
-https://packages.vmware.com/tools/esx/6.0/ubuntu/dists/lucid/index.html
-
-search : 
-http://www.vmware.com/resources/compatibility/search.php?action=search&deviceCategory=software&advancedORbasic=advanced&maxDisplayRows=50&key=&productId=3&datePosted=-1&partnerId%5B%5D=-1&os_bits=-1&os_use%5B%5D=-1&os_family%5B%5D=-1&os_name%5B%5D=FreeBSD&os_type%5B%5D=-1&rorre=0
+python run commands and get output
+import subprocess
+process = subprocess.Popen('java -jar /home/ProjectJenkins/jenkins-cli.jar -s http://jenkins-rel.cal.ci.spirentcom.com:8080/ list-jobs',shell=True, stdout=subprocess.PIPE)
+out,err = process.communicate()
+print(out)

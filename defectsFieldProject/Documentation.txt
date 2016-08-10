@@ -17,7 +17,7 @@ the sql backups are located here:
 
 1. select the database from the gui. 
 2. select public, delete it and create a new one. 
-3. select public and then open the pgconsole and run /i filename.sql to insert all the data into the database. 
+3. select public and then open the pgconsole and  to insert all the data into the database. 
 ------------------------------------------------------------------------------
 
 edited
