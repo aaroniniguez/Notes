@@ -298,3 +298,26 @@ import subprocess
 process = subprocess.Popen('java -jar /home/ProjectJenkins/jenkins-cli.jar -s http://jenkins-rel.cal.ci.spirentcom.com:8080/ list-jobs',shell=True, stdout=subprocess.PIPE)
 out,err = process.communicate()
 print(out)
+
+
+----------------------------------------------------------------------------------------------------------------
+
+javascript callbacks:
+
+// global variable
+var allUserData = [];
+
+// generic logStuff function that prints to consol
+for (var i = 0; i < 10; i ++){
+    $.get( "https://52.42.47.60:8000/index.html", function( data ) {
+      $( ".result" ).html( data );
+    }).done(function() {
+    console.log( "second success" );
+  });
+}
+
+@user1691818: Returning the data is a really bad idea. Instead learn to think with callbacks. Cut and paste whatever code you need to execute in the callback function passed to success. – slebetman Sep 27 '12 at 6:35
+
+
+using callbacks is asynchronous apparently....
+http://callbackhell.com/
