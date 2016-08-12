@@ -1,0 +1,25 @@
+Connection/WorkSpace:
+----------------------------------------------------------------------------------------------------------------------------
+http://jenkins-patch-02.cal.ci.spirentcom.com:8080/
+
+
+http://jenkins-rel.cal.ci.spirentcom.com:8080/cli/
+//SCM/Scripts/Auto_branch_switching/
+
+
+Changed Files
+----------------------------------------------------------------------------------------------------------------------------
+
+TASK:
+----------------------------------------------------------------------------------------------------------------------------
+-for the jenkins link above get all the jobs node names
+-get all node names for just bll and _il
+-ssh into the il ones and run the commands
+
+for i in "ilbuild-08" "ilbuild-09" "ilbuild-15" "ilbuild-16" "ilbuild-17" "ilbuild-18" "ilbuild-19" "ilbuild-20" "ilbuild-27" "ilbuild-28"; do echo -$i-;ssh $i sudo rm -rf /home/spirent/jenkins-rel/workspace/release_il_*; done
+
+
+installed: 
+----------------------------------------------------------------------------------------------------------------------------
+sudo apt-get install sshpass
+
