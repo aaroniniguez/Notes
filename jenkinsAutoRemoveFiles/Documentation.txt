@@ -23,3 +23,11 @@ installed:
 ----------------------------------------------------------------------------------------------------------------------------
 sudo apt-get install sshpass
 
+http://jenkins-patch.cal.ci.spirentcom.com:8080/
+
+in configure
+go to source code management
+click perforce and then go to advanced options
+then click one time force sync
+
+you can edit and save

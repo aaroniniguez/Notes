@@ -180,6 +180,13 @@ for key,value in dict:
 	print key,value
 
 
+python pass statement
+if blah in blah: 
+	pass
+
+can usee the pass statement as a placeholder for other code
+
+
 Jenkins
 ---------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
