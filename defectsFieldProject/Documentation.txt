@@ -29,25 +29,3 @@ stapp/models.py
 templates/admin/adv_filter.html
 stapp/testcaseutil.py
 ------------------------------------------------------------------------------
-Easy to Debug in Django: 
-------------------------------------------------------------------------------
-raise Http404('Error occured when exporting csv file')^
-
-qs.filter(defects__icontains=match_content)^
-modelObject._meta.get_all_field_names()
-
-if you import go from 
-active --> new
-
-if you edit from the website
-active --> active
-basically they don't change
-
-URGENT
-remember to merge the file....
-
-isAdd = False
-is changed...
-ismassedit = false
-
-opts.module_name()

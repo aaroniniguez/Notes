@@ -13,14 +13,6 @@ templates/stapp/suite_result.html
 TASK:
 ----------------------------------------------------------------------------------------------------------------------------
 1. add 3 decimal places to success rate number
-2. add new virtual row 
-edited regression_goal.html
-
-Learned:
-----------------------------------------------------------------------------------------------------------------------------
-
-click on database then do backup with plain file(this will create an sql file )
-then you can run \i filename.sql(windows uses /)
-
-the function using means you use the database testresult
-TestSuite.objects.using('result')
+2. add new row 
+3. changed entire css
+4. changed the time lengths
