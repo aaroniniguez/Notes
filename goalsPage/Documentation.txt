@@ -1,6 +1,6 @@
 Connection/WorkSpace:
 ----------------------------------------------------------------------------------------------------------------------------
-http://smtdb-test.cal.ci.spirentcom.com/stadmin/
+http://smtdb-test.cal.ci.spirentcom.com/stapp/regression_goal/
 http://smarttestdb.cal.ci.spirentcom.com/stapp/regression_goal/
 
 Changed Files
