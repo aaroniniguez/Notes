@@ -176,7 +176,7 @@ print(out)
 
 python how to print out a dictionaries key value pairs
 
-for key,value in dict:
+for key,value in dict.iteritems():
 	print key,value
 
 
@@ -185,6 +185,24 @@ if blah in blah:
 	pass
 
 can usee the pass statement as a placeholder for other code
+
+
+
+import xml.etree.ElementTree
+from xml.dom.minidom import parse
+import xml.dom.minidom
+
+
+xmldoc = xml.dom.minidom.parse("test.xml")
+insertItem = xmldoc1.getElementsByTagName("scm")[0]
+xmldoc.documentElement.replaceChild(insertItem,xmldoc.getElementsByTagName("scm")[0])
+print insertItem.toxml()
+
+
+
+
+
+
 
 
 Jenkins
