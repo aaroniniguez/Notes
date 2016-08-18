@@ -197,9 +197,28 @@ xmldoc = xml.dom.minidom.parse("test.xml")
 insertItem = xmldoc1.getElementsByTagName("scm")[0]
 xmldoc.documentElement.replaceChild(insertItem,xmldoc.getElementsByTagName("scm")[0])
 print insertItem.toxml()
+xmldoc1 = xml.dom.minidom.parseString(xmlstring)
 
 
+multiple lines of text
 
+do triples quotes 
+
+myvar = """
+"""
+
+create a tempfile
+import os
+import tempfile
+
+temp = tempfile.NamedTe	mporaryFile()
+try:
+    print 'temp:', temp
+    print 'temp.name:', temp.name
+finally:
+    # Automatically cleans up the file
+    temp.close()
+print 'Exists after close:', os.path.exists(temp.name)
 
 
 
@@ -323,5 +342,19 @@ raise Http404('Error occured when exporting csv file')^
 qs.filter(defects__icontains=match_content)^
 modelObject._meta.get_all_field_names()
 
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
 
-http://jenkins-smt.cal.ci.spirentcom.com:8080/view/TEST/job/STR-QEMU-DEBUG-Results/configure
+//http://jenkins-smt.cal.ci.spirentcom.com:8080/view/TEST/job/STR-QEMU-DEBUG-Results/configure
+http://jenkins-smt.cal.ci.spirentcom.com:8080/view/TEST/job/STR-QEMU-DEBUG/configure
+
+dependency sshpass for linux: sudo apt-get install sshpass
+questions: 
+
+for the configure windows box.  its a windows command what about linux?
+for the configure windows box. what to do if different job? need to put the file in the node again?
+ask about sshpass
+
+to do::: write script that auto runs build qemu debug thing
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
