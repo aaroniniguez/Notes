@@ -174,6 +174,17 @@ out,err = process.communicate()
 print(out)
 
 
+multiple commands popen 
+ 92     command = "cd "+getRootDir(node)
+ 93     cmd = "sshpass -p spirent ssh -o StrictHostKeyChecking=no "+node+" \""+command+";"+"ls\""
+ 94     pipe = subprocess.Popen(cmd,stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,shell=True)
+ 95     out,err = pipe.communicate()
+ 96     print out
+
+
+
+
+
 python how to print out a dictionaries key value pairs
 
 for key,value in dict.iteritems():
@@ -221,7 +232,13 @@ finally:
 print 'Exists after close:', os.path.exists(temp.name)
 
 
+regex match:
 
+re.match(r"hello this is your regex matching ", string);
+use the r before the string to specify raw expression
+
+>>> re.match(r'\S+_il_ci$',"release_il_ci").group(0)
+'release_il_ci'
 
 
 Jenkins
@@ -344,10 +361,12 @@ modelObject._meta.get_all_field_names()
 
 ---------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
-
+Project Jenkins workspace Cleanup
 //http://jenkins-smt.cal.ci.spirentcom.com:8080/view/TEST/job/STR-QEMU-DEBUG-Results/configure
 http://jenkins-smt.cal.ci.spirentcom.com:8080/view/TEST/job/STR-QEMU-DEBUG/configure
 
+has p4clean workspaces
+http://jenkins-rel.cal.ci.spirentcom.com:8080/view/release(4.68_rel)/view/release_summary_ci/job/release_bll_linux_ci/build?delay=0sec
 dependency sshpass for linux: sudo apt-get install sshpass
 questions: 
 
@@ -356,5 +375,57 @@ for the configure windows box. what to do if different job? need to put the file
 ask about sshpass
 
 to do::: write script that auto runs build qemu debug thing
+
+dont start jobs with _il_ci
+and 				 _bll_ci
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+use Jenkins-devops master node. Install sshpass on it.
+
+New requirement 
+For IL jobs
+1.	               For il jobs, clean up workspace.
+a.	spirent@ilbuild-08:~/jenkins-rel/workspace/release_il_chhvm_yocto_ci$ pwd
+/home/spirent/jenkins-rel/workspace/release_il_chhvm_yocto_ci
+Info from Node config  + “workspace” + job_name
+
+http://jenkins-rel.cal.ci.spirentcom.com:8080/computer/ilbuild-08/config.xml
+               <remoteFS>/home/spirent/jenkins-rel</remoteFS>
+2.	Delete client spec 
+
+               export P4PORT=perforce.spirentcom.com:1666
+export P4USER=scmbuild
+               for i in `p4 clients | grep 4.63_rel | grep release_il_ | grep -v _il_ci_| awk '{print $2}'`; do p4 -u p4admin -P SpirentSCM client -d -f $i;done
+
+3.	Start the job release_il_ci
+For  BLL jobs
+1.	 Exclude release_bll_ci and release_bll_ci_join
+2.	Start rest of the bll (3 jobs), with p4cleanworkspace option on
+
+For UI job
+1.	Start release_ui_ci job with p4cleanworkspace option on
+
+For packaging
+In packaging view :release_summary_packaging
+a.	Cleanup workspace of release_il_centralboot_packaging job-> get node and ssh and clean
+b.	Then turn on one time force sync option on 
+
+
+
+
+
 ---------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
