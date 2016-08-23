@@ -423,7 +423,7 @@ In packaging view :release_summary_packaging
 a.	Cleanup workspace of release_il_centralboot_packaging job-> get node and ssh and clean
 b.	Then turn on one time force sync option on 
 
-
+question...just turn on one time force sync or turn on and build
 
 
 
