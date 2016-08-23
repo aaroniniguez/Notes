@@ -232,6 +232,11 @@ finally:
 print 'Exists after close:', os.path.exists(temp.name)
 
 
+don't delete tempfile 
+tempfile.NamedTemporaryFile(delete=False,suffix=".html")
+
+
+
 regex match:
 
 re.match(r"hello this is your regex matching ", string);
