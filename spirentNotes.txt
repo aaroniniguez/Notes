@@ -53,6 +53,9 @@ file = open("filename", "w") --- opens the file
 file.seek() ---  then you can move the files current position to the beginnging with file.seek(0) and then write with: 
 file.write() --- writes to the file
 file.read --- can read the file file.read(1) reads 1 character or 1 byte, file.read() reads the entire files
+file.readline() -- reads 1 line, then if you do 
+file.readline() again it reads the next line. 
+a+ opens file for reading and appending
 file.close() --- have to close the file when you are done with it
 
 The first argument of every class method, including __init__, is always a reference to the current instance of the class. By convention, this argument is always named self, eg: 
@@ -169,7 +172,7 @@ print(bark)
 
 python run commands and get output
 import subprocess
-process = subprocess.Popen('java -jar /home/ProjectJenkins/jenkins-cli.jar -s http://jenkins-rel.cal.ci.spirentcom.com:8080/ list-jobs',shell=True, stdout=subprocess.PIPE)
+process = subprocess.Popen('java -jar /home/ProjectJenkins/jenkins-cli.jar -s http://jenkins-rel.cal.ci.spirentcom.com:8080/ list-jobs',shell=True, stder=subprocess.PIPE, stdout=subprocess.PIPE)
 out,err = process.communicate()
 print(out)
 
@@ -181,9 +184,7 @@ multiple commands popen
  95     out,err = pipe.communicate()
  96     print out
 
-
-
-
+make sure you put stderr=subprocess.PIPE or else err of communicate() will be None
 
 python how to print out a dictionaries key value pairs
 
