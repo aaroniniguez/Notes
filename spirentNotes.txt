@@ -435,3 +435,16 @@ question...just turn on one time force sync or turn on and build
 
 ---------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
+
+
+edited ../../static/admin/css/changelists.css
+edited ../../static/css/front_end.css
+edited templates/front_end.html
+
+fixed alignment of headers
+fixed alignment of sidebar filter. 
+added hide checkbox
+
+Todo: 
+on checkbox, send an ajax get request...to the database to mark item as display hidden,,,,,then reload the page...
+add a new display field in the database. 
