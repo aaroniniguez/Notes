@@ -1,0 +1,184 @@
+linux commands: 
+---------------------------
+export VAR=value
+declare will create a read only variable
+declare -r myvarname=aaron
+myvarname=test will return an error saying it is readonly. 
+
+sort sorts the contents of a text file, line by line.
+
+nl numbers the lines in the file 
+
+head -5
+tail -5
+
+display the location of your current working directory, run: pwd
+~ is your home directory, can see what it is by doing echo $HOME
+
+jobs -l show the active jobs in the shell
+
+top shows realtime process information while ps shows a single snapshot
+
+shutdown -r now     reboot
+shutdown -h now 
+
+
+edit crontab like this:
+
+crontab -e
+crontab located in: 
+/var/spool/cron/crontabs
+port 110 is pop3 for email, 
+
+port 21 is ftp 
+
+expr 
+expr 1 + 3 
+expr 1 \* 3
+
+check what type of linux box you have 
+lsb_release -a
+file permissions:
+--------------------------------
+each file and directory has three user based permissions groups
+1. owner
+2. group
+3. all users
+ 
+each one has 
+1. read
+2. write
+3. execute
+
+doing ls -l
+
+first 3 chars are owner -> group -> all users
+ls -l shows 
+
+permissions, number of hardlinks, file owner, file group, file size
+
+A Bash alias is essentially nothing more than a keyboard shortcut, an abbreviation, a means of avoiding typing a long command sequence. If, for example, we include alias lm="ls -l.
+
+jobs command: 
+
+shows the active jobs in a shell
+jobs
+fg 1
+
+killing stopped jobs do kill %1, kill %2 etc
+
+putting an ampersand after a command will run the command in the background. 
+Note that when you put & the output - both stdout and stderr - will still be printed onto the screen. If you do not want to see any output on the screen, redirect both stdout and stderr to a file by:
+ping 8.8.8.8 &> /dev/null &
+
+grep 
+grep is used to find text inside a file
+find is used to search for filenames
+find . -name "*zero*" where there is a filename in the current directory containing zero in it
+-------------
+grep -l textToSearch fileToSearch will return the filenames. 
+
+1.bash: there is bourne again shell called bash
+2.sh standard shell
+3. kourn shell 
+4. c shell 
+
+
+for {1..5}
+do 
+echo $1
+done
+
+if statement in bash 
+for loop over numbers in bash 
+arithmetic expressions in bash 
+
+cat 
+
+cat filename
+this will output the contents of the filename 
+
+
+hard link: 
+ln foo.file bar.file
+soft link:
+ln -s file1 file2
+
+zombie processes:
+zombie processes are bits of dead processes that haven't been cleaned up properly. 
+A zombie process has no resources allocated to it whatsoever, other than the entry in the process tree
+
+
+hard links
+soft links aka symbolic links
+
+Underneath the file system files are represented by inodes (or is it multiple inodes not sure)
+
+A file in the file system is basically a link to an inode.
+A hard link then just creates another file with a link to the same underlying inode.
+
+When you delete a file it removes one link to the underlying inode. The inode is only deleted (or deletable/over-writable) when all links to the inode have been deleted.
+
+A symbolic link is a link to another name in the file system.
+
+Once a hard link has been made the link is to the inode. deleting renaming or moving the original file will not affect the hard link as it links to the underlying inode. Any changes to the data on the inode is reflected in all files that refer to that inode.
+
+Note: Hard links are only valid within the same File System. Symbolic links can span file systems as they are simply the name of another file.
+
+
+hard links are faster, soft links take less space cause its just a pointer. 
+
+netstat stands for network statistics 
+
+piping(|)
+piping is for use between programs
+example: 
+ls | head -3 > myfile3.txt
+cat myfile3.txt
+
+the greater than operator( > ) 
+is for putting output into a file (redirecting to a file)
+
+changes owners permissions.
+chmod u=rwx myfile
+chmod u=r myfile
+chmod u=rwx,g=rx,o=r myfile
+(user, group, other)
+
+ls -l command 
+drwxr-xr-x 5 ubuntu ubuntu 4.0K Nov  5 20:07 .
+drwxr-xr-x 3 root   root   4.0K Oct 18 03:47 ..
+
+----first name is owner, second name is group
+the very first letter: 
+– regular file
+l link file
+d directory
+p pipe
+c character special device
+b block special device
+
+Find out what shell you are using: 
+echo $SHELL
+
+echo $0
+
+empty a file in linux
+ cat /dev/null >test.txt
+
+create an alias, create a shortcut: 
+
+[iniguez@lnxsrv05 ~/LINUX]$ 
+alias ls='ls -al'
+
+seq  25 > test.txt
+
+print out aaron continuously
+yes aaron 
+
+
+run multiple commands on the same line(use && operator)
+ ls && cd intro_module/
+
+get the numberof lines in a file: 
+wc -l filename.txt		
